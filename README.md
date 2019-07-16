@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/197231180.svg)](https://zenodo.org/badge/latestdoi/197231180)
+
 # met-data-scripts
 Python scripts for transforming specific metocean datasets from text-based to binary formats and checking them for data quality issues
 
