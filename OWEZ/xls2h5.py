@@ -36,6 +36,7 @@ df.index.names = ["year", "month", "day", "hour", "minute", "seconds"]
 #%% CREATE HDF5 FILE AND ADD GENERAL METADATA
 
 f = h5.File(output_file, "w")
+f.attrs["date_metadata_modified"] = "2019-10-15"
 f.attrs["HDF5-conversion"] = (
     "The original Excel data files (66, total 938 MB) were converted to this "
     "single HDF5 file using the Python packages Pandas (Excel data extraction),"
@@ -47,7 +48,7 @@ f.attrs["annotations"] = (
     "not only a general description of those groups or datasets, but also "
     "information about, for example, device identifiers, units, resolution, "
     "precision, sampling rate, error propagation, data storage details, etc.")
-f.attrs["author"] = "Erik Quaeghebeur (conversion to HDF5-format)"
+f.attrs["institution"] = "NoordzeeWind"
 f.attrs["data_processing"] = (
     "The data as recorded in the source Excel files has been modified. "
     "Namely, the storage format, standard 8-byte 'float64' format in Excel, "
@@ -74,6 +75,8 @@ f.attrs["description"] = (
     "2005, before construction of the wind farm, untill December 2011. "
     "Construction started in April 2006.")
 f.attrs["references"] = (
+    "Data files "
+    "<https://www.noordzeewind.nl/nl_nl/kennis/meteogegevens.html>\n"
     "User manual data files meteorological mast NoordzeeWind "
     "(version 2, 2007-10-01) by H. J. Kouwenhoven "
     "<http://www.noordzeewind.nl/wp-content/uploads/2012/02/"
@@ -103,7 +106,14 @@ f.attrs["source"] = (
     "website <http://www.noordzeewind.nl/>. The data themselves are provided "
     "as per-month Excel files. Next to the data files themselves, there are "
     "multiple relevant reports available there as well.")
+f.attrs["creator_name"] = "NoordzeeWind"
+f.attrs["creator_type"] = "institution"
 f.attrs["version"] = "2018-02-27"
+f.attrs["publisher"] = "Erik Quaeghebeur"
+f.attrs["publisher_email"] = "E.R.G.Quaeghebeur@tudelft.nl"
+f.attrs["publisher_type"] = "person"
+f.attrs["publisher_institution"] = "Delft University of Technology"
+
 
 #%% ADD TIME INFORMATION TO GROUP IN HDF5 FILE
 

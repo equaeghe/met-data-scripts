@@ -19,12 +19,18 @@ pdf = pd.read_csv(input_file, encoding='iso-8859-15',
                   parse_dates=True, index_col=0)
 
 f = nc.Dataset(output_file, 'w')
-f.Conventions = "CF-1.7" # http://cfconventions.org/Data/cf-conventions/cf-conventions-1.7/cf-conventions.html
+f.date_metadata_modified = "2019-10-15"
+f.Conventions = "CF-1.6" # http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html
 f.title = "Statistics from the offshore meteorological mast IJmuiden"
-f.history = ("Created from MMIJ-ALLSTA.csv of 2016-12-21 on 2018-05-29 "
-             "by Erik Quaeghebeur using a custom Python import script "
+f.institution = "Energieonderzoek Centrum Nederland (ECN)"
+f.source = "meteorological mast"
+f.history = ("Created from MMIJ-ALLSTA.csv of 2016-12-21 "
+             "using a custom Python import script (by Erik Quaeghebeur) "
              "with netCDF4, Pandas, and numpy modules.")
-f.references = "http://www.meteomastijmuiden.nl/data/instrumentatierapport/"
+f.references = ("https://www.windopzee.net/meteomast-ijmuiden-mmij/,\n"
+                "https://www.windopzee.net/fileadmin/windopzee/user/"
+                "ECN-Wind_Memo-12-010"
+                "_Abstract_of_Instrumentatierapport_Meetmast_IJmuiden.pdf")
 f.time_coverage_start = "2011-11-01T00:00Z"
 f.time_coverage_end = "2016-03-12T00:00Z" # excluded
 f.comment = ("Custom dataset attributes:\n"
@@ -60,6 +66,12 @@ f.quality_indicators = ( # this and the quality attribute used are non-standard
                                                 "or other MEASNET member.\n"
     "Q4 - Signal measured under external QA, but not checked.\n"
     "Q5 - Signal not calibrated or calibration not checked")
+f.creator_name = "Energieonderzoek Centrum Nederland (ECN)"
+f.creator_type = "institution"
+f.publisher = "Erik Quaeghebeur"
+f.publisher_email = "E.R.G.Quaeghebeur@tudelft.nl"
+f.publisher_type = "person"
+f.publisher_institution = "Delft University of Technology"
 
 ## GROUP HIERARCHY ##
 

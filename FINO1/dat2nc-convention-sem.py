@@ -28,8 +28,11 @@ times = pd.date_range('2004-01-01 00:10:00', '2017-01-01 00:00:00',
 #%%
 
 f = nc.Dataset(output_file, 'w')
+f.date_metadata_modified = "2019-10-15"
 f.Conventions = "CF-1.6" # http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html
 f.title = "Statistics from the offshore meteorological mast Fino 1"
+f.institution = "Bundesamt für Seeschifffahrt und Hydrographie (BSH)"
+f.source = "meteorological mast"
 f.history = ("Created on 2017-09-06 from Fino 1 CSV files downloaded on "
              "2017-03-22 by Erik Quaeghebeur using a custom Python import "
              "script with zipfile, netCDF4, Pandas, and numpy modules.")
@@ -97,6 +100,12 @@ f.comment = ("The statistics datasets have as values a compound data structure "
              "typically by giving its name.\n"
              "\t* 'part_number' describes the manufacturer's part number for "
              "the instrument.")
+f.creator_name = "Energieonderzoek Centrum Nederland (ECN)"
+f.creator_type = "institution"
+f.publisher = "Erik Quaeghebeur"
+f.publisher_email = "E.R.G.Quaeghebeur@tudelft.nl"
+f.publisher_type = "person"
+f.publisher_institution = "Delft University of Technology"
 
 #%%
 
