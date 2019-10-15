@@ -39,8 +39,8 @@ f.history = ("Created on 2018-02-07 from Fino 1 CSV files downloaded on "
              "2017-03-22 by Erik Quaeghebeur using a custom Python import "
              "script with zipfile, netCDF4, Pandas, and numpy modules.")
 f.references = (
-    "http://www.bsh.de/de/Meeresdaten/Beobachtungen/MARNET-Messnetz"
-                                                        "/FINO_1/index.jsp\n"
+    "https://www.bsh.de/"
+          "DE/THEMEN/Beobachtungssysteme/Messnetz-MARNET/FINO/fino_node.html\n"
     "FINO1_Metadaten_for_dissemination.pdf")
 f.time_coverage_start = "2004-01-01T00:00Z"  # excluded
 f.time_coverage_end = "2017-01-01T00:00Z"
