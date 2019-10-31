@@ -1,0 +1,79 @@
+AC:
+  description: acceleration sensor
+  make: Seika
+  type: XB2i
+  owez_code: AC SB2i
+  reference: >-
+    B1, B2, B3: Accelerometers of high overload resistance with integrated
+    electronics for measurement of acceleration in the frequency range 0 to
+    several 100 Hz (data sheet) from SEIKA Mikrosystemtechnik GmbH
+    <http://www.seika.de/english/pdf_e/B_e.pdf>
+  note: The XB2i is an SB2i sensor box with two B accelerometers.
+AWAC:
+  description: acoustic wave and current sensor
+  make: Nortek AS
+  type: AWAC
+  owez_code: ADCP
+  reference: >-
+    AWAC: Acoustic Wave And Current Profiler (data sheet) from Nortek AS
+    <http://www.nortek-as.com/lib/brochures/datasheet-awac>
+  note: >-
+    The version is unknown. However, from the generic October 2014 information
+    brochure from Nortek about this line of devices and the given depth of
+    17 m, we assume this device uses a 1 MHz acoustic frequency. Based on that,
+    we assume to know from the brochure the sampling frequencies for the
+    different quantities; these are conservative in the sense that they are the
+    highest described as possible and consequently the most precise Mean and
+    StdDev estimates.
+CA:
+  description: cup anemometer
+  make: Mierij Meteo
+  type: "018"
+  owez_code: WS 018
+  reference: >-
+    MW 11 Anemometer (data sheet) from Mierij Meteo B. V.
+    <http://mierijmeteo.nl/wp-content/uploads/2014/07/MW-11-final.pdf>
+  note: This corresponds to the current (2016) model MW 11.
+HMP:
+  description: relative humidity and ambient temperature sensors
+  make: Vaisala Oyj
+  type: HMP 233
+  owez_code: RHTT 261
+  reference: >-
+    HMP230 Series Transmitters User's Guide (2002-05) from Vaisala Oyj
+    <http://www.vaisala.com/Vaisala%20Documents/User%20Guides%20and%20Quick%20Ref%20Guides/HMP230_UserGuide.pdf>
+  note: >-
+    This is a transmitter with two separate sensors, a Pt 100 sensor for
+    temperature and a 'HUMICAP' sensor for relative humidity.
+PD:
+  description: precipitation sensor
+  make: Mierij Meteo
+  type: PD 205
+  owez_code: PD 205
+RPT:
+  description: barometric pressure sensor
+  make: Druck
+  type: RPT 410V
+  owez_code: DP 910
+  reference: >-
+    RPT 410 Barometric Pressure Sensor (data sheet) from Druck Inc.
+    <http://veronics.com/products/pressure_transducers-sensors/rpt410.pdf>
+ST:
+  description: seawater temperature sensor
+  make: Mierij Meteo
+  owez_code: ST 808
+  reference: >-
+    SEM 1503/P & SEM1504/P DIN Rail Mounted Pt100 Transmitter (data sheet)
+    from Status Instruments <http://www.status.co.uk/files/Products/411.pdf>
+  note: This is a Pt 100 sensor connected to a SEM1504/P transmitter.
+WM:
+  description: 3-axis ultrasonic anemometer
+  make: Gill
+  type: Windmaster 1086M
+  owez_code: 3D WM4
+WV:
+  description: wind vane
+  make: Mierij Meteo
+  type: "524"
+  owez_code: WD 524
+  note: This likely corresponds to the current (2016) model MW 12.

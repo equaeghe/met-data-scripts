@@ -1,0 +1,80 @@
+date_metadata_modified: "2019-10-31"
+HDF5-conversion: >-
+    The original Excel data files (66, total 938 MB) were converted to this
+    single HDF5 file using the Python packages Pandas (Excel data extraction),
+    NumPy (data processing), and h5py (HDF5 manipulation) and the h5repack
+    utility. The result is a much smaller size (74 MB), convenient data
+    access, and the addition of descriptive annotations.
+annotations: >-
+    The annotations attached to the groups and datasets in this file contain
+    not only a general description of those groups or datasets, but also
+    information about, for example, device identifiers, units, resolution,
+    precision, sampling rate, error propagation, data storage details, etc.
+institution: NoordzeeWind
+data_processing: >-
+    The data as recorded in the source Excel files has been modified.
+    Namely, the storage format, standard 8-byte 'float64' format in Excel,
+    was reduced for storage and transmission efficiency purposes to 4-byte
+    'float32' and individual values were stored in such a way as to encode
+    their uncertainty given the information available about resolution and
+    precision. This is a 'lossy' but compression-improving transformation.
+    (N.B.: Some relevant information has not been found and in that case
+    conservative bounds were assumed, so further storage size reduction is
+    possible in case those data become available.)
+uncertainty_encoding: >-
+    The statistics' values are recorded as floating point numbers for which
+    the uncertainty is encoded using the following convention: if x is the
+    number and e its uncertainty, then we store y = (2 * k ± 1) * d/2, where
+    	* d = 2 ** floor(log2(e)) and
+    	* k = floor(x / d).
+    So y is the odd multiple of d/2 nearest to x. Because y is an odd
+    multiple of a power of two, the denominator of y seen as an irreducible
+    fraction is 2/d, so that d can effectively be determined from y.
+description: >-
+    This file mainly contains the datasets of the met mast at the Egmond
+    aan Zee Offshore Wind Farm (OWEZ), which was the first wind farm in the
+    Netherlands to be built offshore. Measurements are available from July
+    2005, before construction of the wind farm, until December 2011.
+    Construction started in April 2006.
+references: >-
+    Data files
+    <https://www.noordzeewind.nl/nl_nl/kennis/meteogegevens.html>
+    
+    User manual data files meteorological mast NoordzeeWind
+    (version 2, 2007-10-01) by H. J. Kouwenhoven
+    <https://www.noordzeewind.nl/nl_nl/kennis/meteogegevens/_jcr_content/par/iconlist/iconlistsection/link.stream/1554383874387/2f65120cc6dbeb967cfa34e08f95a95304e22e39/r03-manual-data-files-meteo-mast-noordzeewind.pdf>
+    
+    Surrounding obstacles influencing the OWEZ meteo mast measurements
+    (version 2, 2007-08) by A. Curvers
+    <https://www.noordzeewind.nl/nl_nl/kennis/meteogegevens/_jcr_content/par/iconlist/iconlistsection_1245724476/link.stream/1554383869782/bca17955510aad4a2be63909cf037499351150de/owez-r-181-t0-undisturbed-wind.pdf>
+    
+    Current Profiles at the Offshore Wind Farm Egmond aan Zee (2010-11-11)
+    by J. W. Wagenaar & P. J. Eecen
+    <https://www.ecn.nl/publicaties/ECN-E--10-076>
+    
+    3D Turbulence at the Offshore Wind Farm Egmond aan Zee (2010-10-08)
+    by J. W. Wagenaar & P. J. Eecen
+    <https://www.ecn.nl/publicaties/ECN-E--10-075>
+    
+    The OWEZ Meteorological Mast: Analysis of mast-top displacements (2008)
+    by P.J. Eecen & E. Branlard
+    <https://www.ecn.nl/publicaties/ECN-E--08-067>
+    
+    Personal Communication (2016-11/12) with Marc de Hoop
+    of Mierij Meteo Systems B. V.
+    
+    Personal Communication (2016-12) with Peter J. Eecen of ECN
+    
+    Personal Communication (2016-12) with Sicco Kamminga of Nortek B. V.
+source: >-
+    The original data are (at the time of writing) available from the OWEZ
+    website <http://www.noordzeewind.nl/>. The data themselves are provided
+    as per-month Excel files. Next to the data files themselves, there are
+    multiple relevant reports available there as well.
+creator_name: NoordzeeWind
+creator_type: institution
+version: "2018-02-27"
+publisher: Erik Quaeghebeur
+publisher_email: E.R.G.Quaeghebeur@tudelft.nl
+publisher_type: person
+publisher_institution: Delft University of Technology

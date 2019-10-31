@@ -1,0 +1,240 @@
+0: 
+  channel: "00"
+  device: WM
+  location: NW21
+  quantity: wd
+1: 
+  channel: "01"
+  device: WM
+  location: NW21
+  quantity: hws
+2: 
+  channel: "02"
+  device: WM
+  location: NW21
+  quantity: vws
+3: 
+  channel: "03"
+  device: WM
+  location: NW116
+  quantity: wd
+4: 
+  channel: "04"
+  device: WM
+  location: NW116
+  quantity: hws
+5: 
+  channel: "05"
+  device: WM
+  location: NW116
+  quantity: vws
+6: 
+  channel: "06"
+  device: WM
+  location: NW70
+  quantity: wd
+7: 
+  channel: "07"
+  device: WM
+  location: NW70
+  quantity: hws
+8: 
+  channel: "08"
+  device: WM
+  location: NW70
+  quantity: vws
+9: 
+  channel: "09"
+  device: CA
+  location: NW116
+  quantity: ws
+10: 
+  channel: "10"
+  device: CA
+  location: NE116
+  quantity: ws
+11: 
+  channel: "11"
+  device: CA
+  location: S116
+  quantity: ws
+12: 
+  channel: "12"
+  device: CA
+  location: NW70
+  quantity: ws
+13: 
+  channel: "13"
+  device: CA
+  location: NE70
+  quantity: ws
+14: 
+  channel: "14"
+  device: CA
+  location: S70
+  quantity: ws
+15: 
+  channel: "15"
+  device: CA
+  location: NW21
+  quantity: ws
+16: 
+  channel: "16"
+  device: CA
+  location: NE21
+  quantity: ws
+17: 
+  channel: "17"
+  device: CA
+  location: S21
+  quantity: ws
+18: 
+  channel: "18"
+  device: HMP
+  location: S116
+  quantity: at
+19: 
+  channel: "19"
+  device: HMP
+  location: S70
+  quantity: at
+20: 
+  channel: "20"
+  device: HMP
+  location: S21
+  quantity: at
+21: 
+  channel: "21"
+  device: HMP
+  location: S116
+  quantity: rh
+22: 
+  channel: "22"
+  device: HMP
+  location: S70
+  quantity: rh
+23: 
+  channel: "23"
+  device: HMP
+  location: S21
+  quantity: rh
+24: 
+  channel: "24"
+  device: RPT
+  location: T20
+  quantity: ap
+25: 
+  channel: "25"
+  device: PD
+  location: NW70
+  quantity: pl
+26: 
+  channel: "26"
+  device: PD
+  location: NE70
+  quantity: pl
+27: 
+  channel: "27"
+  device: ST
+  location: "U3_8"
+  quantity: wt
+28: 
+  channel: "28"
+  device: AC
+  location: T116
+  quantity: ma
+29: 
+  channel: "29"
+  device: AC
+  location: T116
+  quantity: pa
+30: 
+  channel: "30"
+  device: WV
+  location: NW116
+  quantity: wd
+31: 
+  channel: "31"
+  device: WV
+  location: NE116
+  quantity: wd
+32: 
+  channel: "32"
+  device: WV
+  location: S116
+  quantity: wd
+33: 
+  channel: "33"
+  device: WV
+  location: NW70
+  quantity: wd
+34: 
+  channel: "34"
+  device: WV
+  location: NE70
+  quantity: wd
+35: 
+  channel: "35"
+  device: WV
+  location: S70
+  quantity: wd
+36: 
+  channel: "36"
+  device: WV
+  location: NW21
+  quantity: wd
+37: 
+  channel: "37"
+  device: WV
+  location: NE21
+  quantity: wd
+38: 
+  channel: "38"
+  device: WV
+  location: S21
+  quantity: wd
+50: 
+  channel: "50"
+  device: AWAC
+  location: U17
+  quantity: wl
+51: 
+  channel: "51"
+  device: AWAC
+  location: U17
+  quantity: wt
+52: 
+  channel: "52"
+  device: AWAC
+  location: U17
+  quantity: vh
+53: 
+  channel: "53"
+  device: AWAC
+  location: U17
+  quantity: vp
+54: 
+  channel: "54"
+  device: AWAC
+  location: U17
+  quantity: vd
+55: 
+  channel: "55"
+  device: AWAC
+  location: U17
+  quantity: cv7
+56: 
+  channel: "56"
+  device: AWAC
+  location: U17
+  quantity: cv11
+57: 
+  channel: "57"
+  device: AWAC
+  location: U17
+  quantity: cd7
+58: 
+  channel: "58"
+  device: AWAC
+  location: U17
+  quantity: cd11
