@@ -483,7 +483,7 @@ quantity_metadata = {
             "note": (
                 "This is described as a 'yes'/'no' sensor. From correspondence "
                 "with the manufacturer, I learned it is meant to be a "
-                "'no'/'light'/'medium'/'heavy' sensor, but that in pratice it "
+                "'no'/'light'/'medium'/'heavy' sensor, but that in practice it "
                 "is difficult to decide between the latter three levels. The "
                 "log-histogram of the data itself contains a sharp peak around "
                 "1 that contains a large majority of the data points and a "
