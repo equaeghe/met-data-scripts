@@ -250,7 +250,6 @@ def process_data(pdf, dss, data_out, attributes):
     return data_out
 
 def create_signal(group, instrument, name, dimensions, attributes):
-    # TODO: check whether all height/location pairs are correct (e.g., PD, PM)
     s = f[group][instrument].createVariable(name,
             stats, tuple(dimensions.keys()),
             zlib=True, complevel=9, fill_value=False)
@@ -435,7 +434,7 @@ dimensions = cl.OrderedDict([("time", f["time"]),
                              ("boom", f["boom"])])
 ## SSon
 attributes = {'long_name': "sonic status", 'coordinates': "level_USA boom",
-              'quality': 'Q1'} # TODO: add flag_values/flag_meanings
+              'quality': 'Q1'}
 create_signal("wind", "USA", "SSon", dimensions, attributes)
 ### WsXSon
 attributes = {'long_name': "wind speed X", 'standard_name': "x_wind",
