@@ -1,0 +1,61 @@
+date_metadata_modified: "2019-11-01"
+Conventions: CF-1.6  # http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html
+title: Statistics from the offshore meteorological mast FINO1
+institution: Bundesamt für Seeschifffahrt und Hydrographie (BSH)
+source: meteorological mast
+history: >-
+  Created from FINO1 CSV files downloaded on 2017-03-22 by Erik Quaeghebeur
+  using a custom Python import script with zipfile, netCDF4, Pandas, and numpy
+  modules.
+references: |-
+    https://www.bsh.de/DE/THEMEN/Beobachtungssysteme/Messnetz-MARNET/FINO/fino_node.html
+    FINO1_Metadaten_for_dissemination.pdf
+time_coverage_start: "2004-01-01T00:00Z"  # excluded
+time_coverage_end: "2017-01-01T00:00Z"
+comment: >-
+  For each measurement signal, a separate variable is given for each of the
+  available statistics, (one or more of minimum ('min'), maximum ('max'),
+  average ('avg'), and standard deviation ('std') of the samples within the
+  given time) or a value ('val') characterizing the measurement for the
+  time interval.
+  
+  The estimated uncertainty for the statistics is
+  	* the instrument's provided error for 'min' and 'max',
+  	* the propagated error for 'avg' and 'std'.
+      
+  The statistics' values are recorded as floating point numbers for which the
+  uncertainty is encoded using the following convention: if x is the number
+  and e its uncertainty, then we store y = (2 * k ± 1) * d/2, where
+  	* d = 2 ** floor(log2(e)) and
+  	* k = floor(x / d).
+  So y is the odd multiple of d/2 nearest to x. Because y is an odd multiple
+  of a power of two, the denominator of y seen as an irreducible fraction
+  is 2/d, so that d can effectively be determined from y.
+  
+  There is also always a 'flag' component in the compound data structure,
+  providing information about quality and missingness. The flag values are
+  encoded using the following enumeration:
+  	* 'missing': -1,
+  	* 'raw': 0,
+  	* 'doubtful quality': 1,
+  	* 'quality controlled': 2.
+
+  Custom dataset attributes:
+  	* 'uncertainty_abs' describes the absolute uncertainty of the
+        sampled values.
+  	* 'uncertainty_rel' describes the relative uncertainty of the 
+  	sampled values as a number between 0 and 1.
+  	* 'sampling_frequency' describes the frequency in Hz with which the
+  	quantity has been sampled, which determines the number n of samples.
+
+  Custom instrument attributes:
+  	* 'manufacturer' describes the manufacturer of the instrument,
+  	typically by giving its name.
+  	* 'part_number' describes the manufacturer's part number for
+  	the instrument.
+creator_name: Bundesamt für Seeschifffahrt und Hydrographie (BSH)
+creator_type: institution
+publisher: Erik Quaeghebeur
+publisher_email: E.R.G.Quaeghebeur@tudelft.nl
+publisher_type: person
+publisher_institution: Delft University of Technology

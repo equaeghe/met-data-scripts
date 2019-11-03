@@ -1,0 +1,89 @@
+CA:
+  long_name: cup anemometer
+  manufacturer: Vector Instruments Windspeed Ltd.
+  part_number: A100LK/PC3/WR
+  references: http://www.windspeed.co.uk/ws/index.php?option=displaypage&op=page&Itemid=52
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [1, 2, 3, 4, 5, 6, 7, 8]
+    measurement_height: [34.1, 41.6, 51.6, 61.6, 71.6, 81.6, 91.6, 102.5]
+    position: [boom, boom, boom, boom, boom, boom, boom, vertical strut]
+    orientation: [143, 142, 140, 142, 143, 139, 135, null]
+    mast_distance: [6, 6, 5.5, 5.5, 4, 3, 3, null]
+HTT:
+  long_name: hygro-thermo transmitter
+  manufacturer: Thies
+  part_number: "1.1005.50.512"
+  references: https://www.thiesclima.com/pdf/en/Products/Humidity-Electrical-devices/?art=696
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [1, 2, 3, 5, 8]
+    measurement_height: [34.9, 42.4, 52.4, 72.4, 101]
+    position: [mast internal, mast internal,
+               mast internal, mast internal, mast internal]
+    orientation: null
+    mast_distance: null
+PM:
+  long_name: precipitation monitor
+  manufacturer: Thies
+  part_number: "5.4103.10.000"
+  references: https://www.thiesclima.com/pdf/en/Products/Precipitation-Electrical-devices/?art=791
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [0, 8]
+    measurement_height: [23.7, 101.2]
+    position: [container top, mast external]
+    orientation: [0, 180]
+    mast_distance: [1.54, 0.07]
+PS:
+  long_name: precipitation sensor
+  manufacturer: Thies
+  part_number: "5.4103.20.xxx"
+  references: https://www.thiesclima.com/pdf/en/Products/Precipitation-Electrical-devices/?art=794
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [0]
+    measurement_height: [23.7]
+    position: [container top]
+    orientation: [0]
+    mast_distance: [1.54]
+PTB:
+  long_name: barometer
+  manufacturer: Vaisala
+  part_number: PTB 100 A
+  references: http://www.eol.ucar.edu/isf/facilities/isff/sensors/vaisala/ptb100/PTB100.pdf
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [0, 7]
+    measurement_height: [21, 93]
+    position: [inside container, mast internal]
+    orientation: null
+    mast_distance: null
+PYR:
+  long_name: pyranometer
+  manufacturer: Kipp & Zonen
+  part_number: CM11
+  references: http://www.kippzonen.com/Download/72/Manual-Pyranometers-CMP-series-English
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [1, 7]
+    measurement_height: [34.8, 93]
+    position: [individual boom, individual boom]
+    orientation: [203, 180]
+    mast_distance: [1, 0.4]
+UA:
+  long_name: ultrasonic anemometer
+  manufacturer: Gill Instruments
+  part_number: R3-50
+  references: http://gillinstruments.com/data/datasheets/r3-50.pdf
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [2, 4, 6]
+    measurement_height: [42.1, 62.1, 82.1]
+    position: [boom, boom, boom]
+    orientation: [308, 308, 311]
+    mast_distance: [1.08, 1.08, 1.08]
+WV:
+  long_name: wind vane
+  manufacturer: Thies
+  part_number: "4.3120.22.012"
+  references: https://www.thiesclima.com/pdf/en/Products/Wind-Classic/?art=275
+  locations: # each sub-attribute should have a list value of equal length
+    levels: [1, 3, 5, 7]
+    measurement_height: [34.1, 51.6, 71.6, 91.6]
+    position: [boom, boom, boom, boom]
+    orientation: [307, 310, 307, 315]
+    mast_distance: [0.65, 0.65, 0.65, 0.65]
