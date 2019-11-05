@@ -1,0 +1,276 @@
+dimensions: # and their length
+  bounds_edges: 2
+  time: 229248
+  boom: 3
+coordinates:
+  time:
+    dtype: u4
+    dimensions: [time]
+    options: {zlib: true, complevel: 9, fill_value: false}
+    # values from loaded dataset
+    standard_name: time
+    long_name: time
+    units: seconds since 1970-01-01
+    calendar: standard
+    delta_t: "0000-00-00 00:10:00"
+    axis: T
+    bounds: time_bounds
+  time_bounds: # time bounds (of statistics, denote closed-open intervals)
+    dtype: u4
+    dimensions: [time, bounds_edges]
+    options: {zlib: true, complevel: 9, fill_value: false}
+    # values deduced from time coordinate
+    units: seconds since 1970-01-01
+    long_name: >-
+      bounds of (closed-open) time intervals over which the statistics have
+      been calculated
+  boom:
+    dtype: S3
+    dimensions: [boom]
+    options: {fill_value: false}
+    values: ['000', '120', '240']
+    long_name: the label of the boom on which the instrument is placed
+  direction:
+    dtype: f4
+    dimensions: [boom]
+    options: {fill_value: false}
+    values: [46.5, 166.5, 286.5]
+    units: degree
+    long_name: the direction of the boom on which the instrument is placed
+groups:
+  air:
+    dimensions: # and their length
+      level_air: 2
+    coordinates:
+      level_air:
+        dtype: S2
+        dimensions: [level_air]
+        options: {fill_value: false}
+        values: ['21', '90']
+        axis: Z
+      height_air:
+        dtype: f4
+        dimensions: [level_air]
+        options: {fill_value: false}
+        values: [21., 90.]
+        units: m
+        positive: up
+        axis: Z
+        standard_name: height
+        long_name: height above LAT (Lowest Astronomical Tide)
+    groups:
+      HMP:
+        variables:
+          Rh:
+            dimensions: [time, level_air]
+            coordinates: height_air # auxiliary coordinates
+          Tair:
+            dimensions: [time, level_air]
+            coordinates: height_air # auxiliary coordinates
+      PTB:
+        variables:
+          Pair:
+            dimensions: [time, level_air]
+            coordinates: height_air # auxiliary coordinates
+      pseudo:
+        variables:
+          AirDensity:
+            dimensions: [time, level_air]
+            coordinates: height_air # auxiliary coordinates
+  wind:
+    groups:
+      CA:
+        dimensions: # and their length
+          level_CA: 3
+          boom_CA: 5
+        coordinates:
+          level_CA:
+            dtype: S2
+            dimensions: [level_CA]
+            options: {fill_value: false}
+            values: ['27', '58', '92']
+            axis: Z
+          height_CA:
+            dtype: f4
+            dimensions: [level_CA]
+            options: {fill_value: false}
+            values: [27., 58.5, 92.]
+            units: m
+            positive: up
+            axis: Z
+            standard_name: height
+            long_name: height above LAT (Lowest Astronomical Tide)
+          boom_CA:
+            dtype: S3
+            dimensions: [boom_CA]
+            options: {fill_value: false}
+            values: ['000', '120', '180', '240', '300']
+          direction_CA:
+            dtype: f4
+            dimensions: [boom_CA]
+            options: {fill_value: false}
+            values: [46.5, 166.5, 226.5, 286.5, 346.5]
+            units: degree
+        variables:
+          Ws:
+            dimensions: [time, level_CA, boom_CA]
+            coordinates: height_CA direction_CA # auxiliary coordinates
+          TrueWs:
+            dimensions: [time, level_CA]
+            coordinates: height_CA # auxiliary coordinates
+      WV:
+        dimensions: # and their length
+          level_WV: 3
+        coordinates:
+          level_WV:
+            dtype: S2
+            dimensions: [level_WV]
+            options: {fill_value: false}
+            values: ['27', '58', '87']
+            axis: Z
+          height_WV:
+            dtype: f4
+            dimensions: [level_WV]
+            options: {fill_value: false}
+            values: [27., 58.5, 87.]
+            units: m
+            positive: up
+            axis: Z
+            standard_name: height
+            long_name: height above LAT (Lowest Astronomical Tide)
+        variables:
+          Wd:
+            dimensions: [time, level_WV, boom]
+            coordinates: height_WV direction # auxiliary coordinates
+          TrueWd:
+            dimensions: [time, level_WV]
+            coordinates: height_WV # auxiliary coordinates
+      USA:
+        dimensions: # and their length
+          level_USA: 1
+        coordinates:
+          level_USA:
+            dtype: S2
+            dimensions: [level_USA]
+            options: {fill_value: false}
+            values: ['85']
+          height_USA:
+            dtype: f4
+            dimensions: [level_USA]
+            options: {fill_value: false}
+            values: [85.]
+            units: m
+            positive: up
+            axis: Z
+            standard_name: height
+            long_name: height above LAT (Lowest Astronomical Tide)
+        variables:
+          SSon:
+            dimensions: [time, level_USA, boom]
+            coordinates: height_USA direction # auxiliary coordinates
+          WsXSon:
+            dimensions: [time, level_USA, boom]
+            coordinates: height_USA direction # auxiliary coordinates
+            ancillary_variables: SSon
+          WsYSon:
+            dimensions: [time, level_USA, boom]
+            coordinates: height_USA direction # auxiliary coordinates
+            ancillary_variables: SSon
+          WsZSon:
+            dimensions: [time, level_USA, boom]
+            coordinates: height_USA direction # auxiliary coordinates
+            ancillary_variables: SSon
+          WsMag:
+            dimensions: [time, level_USA, boom]
+            coordinates: height_USA direction # auxiliary coordinates
+          WsHor:
+            dimensions: [time, level_USA, boom]
+            coordinates: height_USA direction # auxiliary coordinates
+          TrueWsHor:
+            dimensions: [time, level_USA]
+            coordinates: height_USA # auxiliary coordinates
+  prec:
+    groups:
+      PD:
+        dimensions: # and their length
+          level_PD: 1
+          location_PD: 1
+        coordinates:
+          level_PD:
+            dtype: S2
+            dimensions: [level_PD]
+            options: {fill_value: false}
+            values: ['27']
+            axis: Z
+          height_PD:
+            dtype: f4
+            dimensions: [level_PD]
+            options: {fill_value: false}
+            values: [27.]
+            units: m
+            positive: up
+            axis: Z
+            standard_name: height
+            long_name: height above LAT (Lowest Astronomical Tide)
+          location_PD:
+            dtype: S1
+            dimensions: [location_PD]
+            options: {fill_value: false}
+            values: ['U']
+        variables:
+          Prec:
+            dimensions: [time, level_PD, location_PD]
+            coordinates: height_PD # auxiliary coordinates
+      PM:
+        dimensions: # and their length
+          level_PM: 1
+          location_PM: 2
+        coordinates:
+          level_PM:
+            dtype: S2
+            dimensions: [level_PM]
+            options: {fill_value: false}
+            values: ['21']
+            axis: Z
+          height_PM:
+            dtype: f4
+            dimensions: [level_PM]
+            options: {fill_value: false}
+            values: [21.]
+            units: m
+            positive: up
+            axis: Z
+            standard_name: height
+            long_name: height above LAT (Lowest Astronomical Tide)
+          location_PM:
+            dtype: S1
+            dimensions: [location_PM]
+            options: {fill_value: false}
+            values: ['l', 'r']
+        variables:
+          qual:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates
+          Synop:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates
+            ancillary_variables: OK qual
+          intens:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates
+            ancillary_variables: OK qual
+          Prec:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates
+            ancillary_variables: OK qual
+          amount:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates
+            ancillary_variables: OK qual
+          visib:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates
+            ancillary_variables: OK qual
+          OK:
+            dimensions: [time, level_PM, location_PM]
+            coordinates: height_PM # auxiliary coordinates

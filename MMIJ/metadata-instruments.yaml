@@ -1,0 +1,36 @@
+HMP:
+  manufacturer: Vaisala
+  manufacturer_name: HUMICAP
+  part_number: "HMP155"
+  references: http://www.vaisala.com/Vaisala%20Documents/Brochures%20and%20Datasheets/HMP155-Datasheet-B210752EN-E-LoRes.pdf
+  long_name: humidity and temperature probe
+  comment: temperature sensor is ‘Pt100 RTD Class F0.1 IEC 60751’
+PTB:
+  manufacturer: Vaisala
+  part_number: "PTB210"
+  references: http://www.vaisala.com/Vaisala%20Documents/Brochures%20and%20Datasheets/PTB210-Datasheet-B210942EN-B-LoRes.pdf
+  long_name: digital barometer
+CA:
+  manufacturer: Adolf Thies GmbH & Co. KG
+  manufacturer_name: Wind Transmitter “First Class” Advanced
+  part_number: "4.3351.00.140"
+  references: https://www.thiesclima.com/en/Products/Wind-First-Class/?art=219
+  long_name: cup anemometer
+WV:
+  manufacturer: Adolf Thies GmbH & Co. KG
+  manufacturer_name: Thies Wind Vane First Class
+  part_number: "P 6200H"
+  references: http://www.wind-pgc.com/files/en_ds_windvane_thies_first.pdf
+  long_name: wind vane
+USA:
+  manufacturer: METEK GmbH
+  manufacturer_name: >-
+    previously: USA-1; now: uSonic-3 Scientific
+  references: http://metek.de/wp-content/uploads/2014/05/Metek-Ultrasonic-Anemometer-uSonic-3-Scientific-USA-1-Datasheet.pdf
+  long_name: ultrasonic wind sensor
+PM:
+  manufacturer: Adolf Thies GmbH & Co. KG
+  manufacturer_name: Thies Disdro Laser precipitation monitor
+  part_number: "5.4110.00.xxx"
+  references: https://www.thiesclima.com/pdf/en/Products/Precipitation-Electrical-devices/?art=774
+  long_name: laser precipitation monitor

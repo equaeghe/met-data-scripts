@@ -1,0 +1,25 @@
+date_metadata_modified: "2019-10-15"
+Conventions: CF-1.6 # http://cfconventions.org/cf-conventions/v1.6.0/cf-conventions.html
+title: Statistics from the offshore meteorological mast IJmuiden
+institution: Energieonderzoek Centrum Nederland (ECN)
+source: meteorological mast
+history: >-
+  Created from MMIJ-ALLSTA.csv of 2016-12-21 using a custom Python import
+  script (by Erik Quaeghebeur) with netCDF4, Pandas, and numpy modules.
+references: |-
+  https://www.windopzee.net/meteomast-ijmuiden-mmij/
+  https://www.windopzee.net/fileadmin/windopzee/user/ECN-Wind_Memo-12-010_Abstract_of_Instrumentatierapport_Meetmast_IJmuiden.pdf
+time_coverage_start: "2011-11-01T00:00Z"
+time_coverage_end: "2016-03-12T00:00Z" # excluded
+quality_indicators: |- # this and the quality attribute used are non-standard
+  Q1 - ISO 17025 approved signal quality, in accordance with IEC61400-12
+  Q2 - Signal measured under QA of another MEASNET member
+  Q3 - Signal measured under external QA, checked by ECN or other MEASNET member
+  Q4 - Signal measured under external QA, but not checked
+  Q5 - Signal not calibrated or calibration not checked
+creator_name: Energieonderzoek Centrum Nederland (ECN)
+creator_type: institution
+publisher: Erik Quaeghebeur
+publisher_email: E.R.G.Quaeghebeur@tudelft.nl
+publisher_type: person
+publisher_institution: Delft University of Technology

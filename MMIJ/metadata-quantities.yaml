@@ -1,0 +1,189 @@
+HMP:
+  Rh:
+    long_name: relative humidity
+    standard_name: relative_humidity
+    units: "%"
+    quality: Q1
+    valid_range: [0., 100.] # there are some values > 100
+    uncertainty_abs: 1.
+      # derived from spec sheet information about accuracy:
+      #   between 15°C and 25°C:
+      #     1 pp between 0% and 90%,
+      #     1.7 pp between 90% and 100%
+      #   between -20°C and 40°C:
+      #     (1 + 0.008·reading) pp
+      # information about calibration uncertainty (for 20°C):
+      #   0.6 pp between 0% and 40%,
+      #   1 pp between 40% and 97%.
+  Tair:
+    long_name: air temperature
+    standard_name: air_temperature
+    units: "degree_Celsius"
+    quality: Q1
+    valid_range: [-80.0, 60.0]
+    uncertainty_abs: 0.12
+      # derived from spec sheet information about accuracy:
+      #   0.176 - 0.0028·reading between -80°C and 20°C
+      #   0.07 + 0.0025·reading between 20°C and 60°C
+PTB:
+  Pair:
+    long_name: air pressure
+    standard_name: air_pressure
+    units: "hPa"
+    quality: Q1
+    valid_range: [500.0, 1100.0]
+    uncertainty_abs: 0.1
+pseudo:
+  AirDensity: # air_density(Pair, Tair) = Pair * 100 / 287.05 / (Tair + 273.15)
+    long_name: calculated air density
+    standard_name: air_density
+    units: "kg/m3"
+    quality: Q1
+    valid_range': [0.522844610346525, 1.9839943062970673]
+      # [air_density(500, 60), air_density(1100, -80)]  
+    uncertainty_abs: 0.00010456892206930498 # air_density(0.1, 60)
+CA:
+  Ws:
+    long_name: wind speed
+    standard_name: wind_speed
+    units: "m/s"
+    quality: Q1
+    valid_range: [0.3, 75.]
+    uncertainty_abs: 0.2
+    uncertainty_rel: 0.01 
+  TrueWs:
+    long_name: tower shadow-corrected wind speed
+    standard_name: wind_speed
+    units: "m/s"
+    quality: Q1
+    valid_range: [0.3, 75.]
+    uncertainty_abs: 0.1414213562373095 # 0.2 / sqrt(2)
+WV:
+  Wd:
+    long_name: wind direction
+    standard_name: wind_from_direction
+    units: "degree"
+    quality: Q1
+    uncertainty_abs: 1.
+    comment: >-
+       The avg values lie in [0,360], but the min and max values may lie
+       outside this interval, to make sure that min < avg < max.
+  TrueWd:
+    long_name: tower shadow-corrected wind direction
+    standard_name: wind_from_direction
+    units: "degree"
+    quality: Q1
+    uncertainty_abs: 0.7071067811865475 # 1. / sqrt(2)
+    comment: >-
+       The avg values lie in [0,360], but the min and max values may lie
+       outside this interval, to make sure that min < avg < max.
+USA:
+  SSon:
+    long_name: sonic status
+    quality: Q1
+    flag_values: [-1000., 0.]
+    flag_meanings: Not_OK OK
+  WsXSon:
+    long_name: wind speed X
+    standard_name: x_wind
+    units: "m/s"
+    quality: Q1
+    valid_range: [-60.,  60.]
+    uncertainty_abs: 0.1
+    uncertainty_rel: 0.02
+  WsYSon:
+    long_name: wind speed Y
+    standard_name: y_wind
+    units: "m/s"
+    quality: Q1
+    valid_range: [-60.,  60.]
+    uncertainty_abs: 0.1
+    uncertainty_rel: 0.02
+  WsZSon:
+    long_name: wind speed Z
+    standard_name: upward_air_velocity
+    units: "m/s"
+    quality: Q1
+    valid_range: [-60.,  60.]
+    uncertainty_abs: 0.1
+    uncertainty_rel: 0.02
+  WsMag:
+    long_name: calculated wind speed magnitude
+    units: "m/s"
+    quality: Q1
+    valid_range: [0., 103.92304845413263] # sqrt(3) * 60.
+    uncertainty_abs: 0.06734396116428513
+      # Maxwell-Boltzmann assumed: 0.1 * sqrt(3 - 8/π)
+  WsHor:
+    long_name: calculated wind speed
+    standard_name: wind_speed
+    units: "m/s"
+    quality: Q1
+    valid_range: [0., 84.8528137423857] # sqrt(2) * 60.
+    uncertainty_abs: 0.06551364
+      # Rayleigh assumed: 0.1 * sqrt(2 - π/2)
+  TrueWsHor:
+    long_name: tower shadow-corrected wind speed
+    standard_name: wind_speed
+    units: "m/s"
+    quality: Q1
+    valid_range: [0., 84.8528137423857] # sqrt(2) * 60.
+    uncertainty_abs: 0.046325136 # 0.1 * sqrt(2 - π/2) / sqrt(2)
+PD:
+  Prec:
+    long_name: precipitation presence
+    quality: Q1
+    flag_values: [0., 100.]
+    flag_meanings: no yes
+PM:
+  qual:
+    long_name: momentaneous measurement quality
+    units: "%"
+    quality: Q5
+    valid_range: [0., 100.]
+    comment: original statistic's resolution is 1 pp
+  Synop:
+    long_name: >-
+      synoptic code (ww 4677), specifies the kind of precipitation, if any
+    quality: Q5
+    flag_values: [
+      51, 52, 53, # Drizzle (also freezing)
+      58, 59,     # Drizzle with rain
+      61, 63, 65, # Rain (also freezing)
+      68, 69,     # Rain and/or Drizzle with snow;
+      71, 73, 75, # Snow
+      87, 88,     # Ice pellets, Soft hail
+      77,         # Snow grains (also ice prisms), Ice crystals/needles
+      89, 90      # Hail
+    ]
+  intens:
+    long_name: intensity of precipitation
+    standard_name: lwe_precipitation_rate
+    units: "mm/min"
+    quality: Q5
+    uncertainty_rel: 0.15
+    valid_range: [.005, 250.]
+  Prec:
+    long_name: precipitation presence
+    quality: Q5
+    flag_values: [0., 100.]
+    flag_meanings: no yes
+  amount:
+    long_name: amount of precipitation since the last sensor reset
+    units: "mm"
+    quality: Q5
+    valid_min: 0.
+    comment: original statistic's resolution is 1 mm
+  visib:
+    long_name: visibility distance
+    standard_name: visibility_in_air
+    units: "m"
+    quality: Q5
+    valid_range: [0., 100000.]
+    comment: original statistic's resolution is 10 m
+  OK:
+    long_name: sensor status
+    units: "%"
+    quality: Q1
+    flag_values: [0., 100.]
+    flag_meanings: OK not_OK
