@@ -12,8 +12,8 @@ N = len(f['time/timestamp'])
 
 for d in fd:  # each d corresponds to a device
     for v in fd[d]:  # each variable v measured by that device
-        if 'range' in fd[d][v].attrs:  # is a range defined for v?
-            lb, ub = fd[d][v].attrs['range']  # range bounds
+        if 'valid_range' in fd[d][v].attrs:  # is a range defined for v?
+            lb, ub = fd[d][v].attrs['valid_range']  # range bounds
             for l in fd[d][v]:  # locations l where such a device is present
                 # go over statistics s of interest available for v
                 for s in {'Mean', 'Min', 'Max'}:
@@ -53,8 +53,8 @@ for d in fd:  # each d corresponds to a device
             for s in ['Min', 'Max', 'Mean', 'StdDev']:
                 x = x[~np.isnan(x)]
                 x = np.float32(fd[d][v][l][s][:])
-                if 'range' in fd[d][v].attrs:  # is a range defined for v?
-                    lb, ub = fd[d][v].attrs['range']  # range bounds
+                if 'valid_range' in fd[d][v].attrs:  # is a range defined for v?
+                    lb, ub = fd[d][v].attrs['valid_range']  # range bounds
                     x = x[(x >= lb) & (x <= ub)]
                 μ = np.mean(x)
                 σ = np.std(x)
@@ -79,9 +79,9 @@ for d in fd:  # each d corresponds to a device
                                   figsize=((4 + 0.5) * sw,
                                            (n + 0.5) * sh))
         fig.suptitle("OWEZ {}/{} ".format(d, v)
-                     + '(' + fd[d][v].attrs['description']
-                     + ((", units: " + fd[d][v].attrs['unit'])
-                        if "unit" in fd[d][v].attrs
+                     + '(' + fd[d][v].attrs['long_name']
+                     + ((", units: " + fd[d][v].attrs['units'])
+                        if "units" in fd[d][v].attrs
                         else '')
                      + ')', y=1.1)
         for i, l in enumerate(fd[d][v]):

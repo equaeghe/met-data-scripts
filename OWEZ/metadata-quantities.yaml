@@ -1,7 +1,7 @@
 AC:
   ma:
-    description: North-South acceleration
-    note: >-
+    long_name: North-South acceleration
+    comment: >-
       The North-South or 'X' direction corresponds to movement along
       a meridian.
     resolution: 0.01 # 0.001g (approx. 0.01 m/s² with g = 9.81 m/s²);
@@ -10,10 +10,10 @@ AC:
     uncertainty_abs: 0.01 # resolution
     sampling_frequency: 33
     samples: 19800
-    unit: "m/s2"
+    units: "m/s2"
   pa:
-    description: West-East acceleration
-    note: >-
+    long_name: West-East acceleration
+    comment: >-
       The West-east or 'Y' direction corresponds to movement along a parallel.
     resolution: 0.01 # 0.001g (approx. 0.01 m/s² with g = 9.81 m/s²);
                      # smallest difference between ordered quantized
@@ -21,41 +21,41 @@ AC:
     uncertainty_abs: 0.01 # resolution
     sampling_frequency: 33
     samples: 19800
-    unit: "m/s2"
+    units: "m/s2"
 AWAC:
   cd11:
-    description: current direction 11 m
+    long_name: current direction 11 m
     resolution: 0.01
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
-    note: >-
+    comment: >-
       From correspondence with the manufacturer, it seems likely that the 'raw'
       values (such as Max and Min) are based on acoustic measurements over
       1 minute, so that the effective sampling frequency may well be lower
       than 1 Hz.
     sampling_frequency: 1
     samples: 600
-    unit: "degree"
+    units: "degree"
   cd7:
-    description: current direction 7 m
+    long_name: current direction 7 m
     resolution: 0.01
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
-    note: >-
+    comment: >-
       From correspondence with the manufacturer, it seems likely that the 'raw'
       values (such as Max and Min) are based on acoustic measurements over
       1 minute, so that the effective sampling frequency may well be lower
       than 1 Hz.
     sampling_frequency: 1
     samples: 600
-    unit: "degree"
+    units: "degree"
   cv11:
     uncertainty_rel: 0.01
     uncertainty_abs: 0.005
-    description: current velocity 11 m
+    long_name: current velocity 11 m
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
-    note: >-
+    comment: >-
       From correspondence with the manufacturer, it seems likely that the 'raw'
       values (such as Max and Min) are based on acoustic measurements over
       1 minute, so that the effective sampling frequency may well be lower
@@ -63,14 +63,14 @@ AWAC:
     resolution: 0.01
     sampling_frequency: 1
     samples: 600
-    unit: "m/s"
+    units: "m/s"
   cv7:
     uncertainty_rel: 0.01
     uncertainty_abs: 0.005
-    description: current velocity 7 m
+    long_name: current velocity 7 m
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
-    note: >-
+    comment: >-
       From correspondence with the manufacturer, it seems likely that the 'raw'
       values (such as Max and Min) are based on acoustic measurements over
       1 minute, so that the effective sampling frequency may well be lower
@@ -78,11 +78,11 @@ AWAC:
     resolution: 0.01
     sampling_frequency: 1
     samples: 600
-    unit: "m/s"
+    units: "m/s"
   vd:
     uncertainty_abs: 2 # 2–4°
-    description: wave direction
-    note: >-
+    long_name: wave direction
+    comment: >-
       From correspondence with the manufacturer, we know that acoustic
       measurements over 512 s (8 minutes 32 s) were the basis for the 'raw'
       values (such as Max and Min), which means that the effective sampling
@@ -93,11 +93,11 @@ AWAC:
                            # the same resolution as Max & Min values.
     sampling_frequency: 2
     samples: 1200
-    unit: "degree"
+    units: "degree"
   vh:
     uncertainty_rel: 0.01
-    description: wave height
-    note: >-
+    long_name: wave height
+    comment: >-
       From correspondence with the manufacturer, it seems very likely that this
       is the H_m0 wave height and not the classical definition of significant
       wave height; they also mentioned a 5 cm uncertainty for this quantity.
@@ -109,61 +109,61 @@ AWAC:
                            # the same resolution as Max & Min values.
     sampling_frequency: 4
     samples: 2400
-    unit: "m"
+    units: "m"
   vp:
-    description: wave period
+    long_name: wave period
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
     resolution: 0.01
     sampling_frequency: 2
     samples: 1200
-    unit: "s"
+    units: "s"
   wl:
-    description: water level
+    long_name: water level
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
     resolution: 0.01
     sampling_frequency: 4
     samples: 2400
-    unit: "m"
+    units: "m"
   wt:
     uncertainty_abs: 0.1
-    description: water temperature
+    long_name: water temperature
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
-    range: [ -4.,  40.]
+    valid_range: [ -4.,  40.]
     resolution: 0.01
     sampling_frequency: 1
     samples: 600
-    unit: "degree Celsius"
+    units: "degree Celsius"
 CA:
   ws:
     uncertainty_abs: 0.5
-    description: wind speed
-    range: [  0.,  50.]
+    long_name: wind speed
+    valid_range: [  0.,  50.]
     sampling_frequency: 4
     samples: 2400
     "starting_speed": 0.5
-    unit: "m/s"
+    units: "m/s"
 HMP:
   at:
     uncertainty_abs: 0.1 # at 20°C
-    description: ambient temperature
-    range: [-40.,  80.]
+    long_name: ambient temperature
+    valid_range: [-40.,  80.]
     temperature_dependence: 0.005 degree Celsius per degree Celsius
-    unit: "degree Celsius"
+    units: "degree Celsius"
   rh:
     uncertainty_abs: 1 # maximum: 1% (0–90%), 2% (90–100%);
                        # salt solutions: 2% (0–90%), 3% (90–100%);
                        # these are absolute values (percentage points)
                        # not relative values
-    description: relative humidity
-    range: [   0.,  100.]
-    unit: "%"
+    long_name: relative humidity
+    valid_range: [   0.,  100.]
+    units: "%"
 PD:
   pl:
-    description: precipitation level
-    note: >-
+    long_name: precipitation level
+    comment: >-
       This is described as a 'yes'/'no' sensor. From correspondence with the
       manufacturer, I learned it is meant to be a 'no'/'light'/'medium'/'heavy'
       sensor, but that in practice it is difficult to decide between the latter
@@ -173,64 +173,64 @@ PD:
       to 'no' and higher values to increasing intensity of precipitation; there
       are a few data points between 0 and 1, but these are likely faulty
       measurements.
-    range: [ 0.,  5.]
+    valid_range: [ 0.,  5.]
     resolution: 7.9e-5 # smallest difference between ordered quantized values
 RPT:
   ap:
     uncertainty_abs: 0.5 # 0.5 mbar (around 20°C);
                          # 1 mbar (between -10°C and 50°C)
-    description: ambient air pressure
-    range: [600., 1100.]
+    long_name: ambient air pressure
+    valid_range: [600., 1100.]
     resolution: 0.02
-    unit: "mbar"
+    units: "mbar"
 ST:
   wt:
     uncertainty_abs: 0.15
     uncertainty_rel: 0.001
-    description: water temperature
-    unit: "degree Celsius"
+    long_name: water temperature
+    units: "degree Celsius"
 WM:
   hws:
     uncertainty_rel: 0.015 # %RMS (<20 m/s)'
-    description: horizontal wind speed
+    long_name: horizontal wind speed
     uncertainty_abs: 0.014 # sqrt(0.01 ** 2 + 0.01 ** 2) = 0.01414213562373095…
                            # ‘resolution’ + ‘offset’
-    range: [  0.,  60.]
+    valid_range: [  0.,  60.]
     resolution: 0.01
     sampling_frequency: 4
     samples: 2400
-    unit: "m/s"
+    units: "m/s"
   vws:
     uncertainty_rel: 0.015 # %RMS (<20 m/s)'
-    description: vertical wind speed
+    long_name: vertical wind speed
     uncertainty_abs: 0.014 # sqrt(0.01 ** 2 + 0.01 ** 2) = 0.01414213562373095…
                            # ‘resolution’ + ‘offset’
-    range: [-60., 60.]
+    valid_range: [-60., 60.]
     resolution: 0.01
     sampling_frequency: 4
     samples: 2400
-    unit: "m/s"
+    units: "m/s"
   wd:
     uncertainty_abs: 2 # <25 m/s
-    description: wind direction
-    note: >-
+    long_name: wind direction
+    comment: >-
       The majority of missing (Max, Min)-value pairs with non-missing Mean
       value occur when Mean is close to 0 degree or 360 degree, so this data is
       'MNAR', missing not at random, and is non-ignorable.
       (Possibly, such value pairs were removed to mistakenly avoid Min-values
       smaller than Max-values, although that makes perfect sense for
       directional data.)
-    range: [0., 360.]
+    valid_range: [0., 360.]
     resolution: 1
     sampling_frequency: 4
     samples: 2400
-    unit: "degree"
+    units: "degree"
 WV:
   wd:
     uncertainty_abs: 1.4 # sqrt((360 / 256) ** 2 + 0.3 ** 2) = 1.4378939677528…
                          # ‘resolution’ + ‘code disc error’
-    description: wind direction
-    note: >-
+    long_name: wind direction
+    comment: >-
       The majority of missing (Max, Min)-value pairs with non-missing Mean
       value occur when Mean is close to 0 degree or 360 degree, so this data is
       'MNAR', missing not at random, and is non-ignorable.
@@ -241,6 +241,6 @@ WV:
       even if we allow for Gray-code-to-analog and analog-to-digital
       conversion; we assume that whatever signal processing gave rise to the
       recorded values did not significantly decrease the uncertainty.
-    range: [0., 360.]
+    valid_range: [0., 360.]
     resolution: 1.40625 # 8 bit, so 360°/256
-    unit: "degree"
+    units: "degree"
