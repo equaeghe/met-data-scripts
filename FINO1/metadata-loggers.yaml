@@ -1,0 +1,23 @@
+- 
+  manufacturer: Gantner
+  type: Q-Station
+  number: 2
+  comment: Replaced Ammonit loggers in the period July–September 2015
+  reference: "FINO1_Metadaten_for_dissemination.pdf"
+- 
+  manufacturer: Ammonit
+  type: P414
+  number: 1
+  comment: Replaced by Gantner logger in the period July–September 2015
+  reference: "FINO1_Metadaten_for_dissemination.pdf"
+- 
+  manufacturer: Ammonit
+  type: Meteo32
+  number: 1
+  comment: Replaced by Gantner logger in the period July–September 2015
+  reference: "FINO1_Metadaten_for_dissemination.pdf"
+- 
+  manufacturer: Hottinger Baldwin Measurements
+  type: MGC
+  number: 3
+  reference: "FINO1_Metadaten_for_dissemination.pdf"
