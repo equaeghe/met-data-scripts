@@ -4,24 +4,22 @@ AC:
     comment: >-
       The North-South or 'X' direction corresponds to movement along
       a meridian.
-    resolution: 0.01 # 0.001g (approx. 0.01 m/s² with g = 9.81 m/s²);
-                     # smallest difference between ordered quantized
-                     # values is 0.007324218 m/s²
-    uncertainty_abs: 0.01 # resolution
+    uncertainty_abs: 0.01 # spec sheet ‘resolution’: 0.001g
+                          # (approx. 0.01 m/s² with g = 9.81 m/s²)
     sampling_frequency: 33
     samples: 19800
     units: "m/s2"
+    valid_range: [-30., 30.] # spec sheet ‘measuring range’
   pa:
     long_name: West-East acceleration
     comment: >-
       The West-east or 'Y' direction corresponds to movement along a parallel.
-    resolution: 0.01 # 0.001g (approx. 0.01 m/s² with g = 9.81 m/s²);
-                     # smallest difference between ordered quantized
-                     # values is 0.007324218 m/s²
-    uncertainty_abs: 0.01 # resolution
+    uncertainty_abs: 0.01 # spec sheet ‘resolution’: 0.001g
+                          # (approx. 0.01 m/s² with g = 9.81 m/s²)
     sampling_frequency: 33
     samples: 19800
     units: "m/s2"
+    valid_range: [-30., 30.] # spec sheet ‘measuring range’
 AWAC:
   cd11:
     long_name: current direction 11 m
@@ -36,6 +34,7 @@ AWAC:
     sampling_frequency: 1
     samples: 600
     units: "degree"
+    valid_range: [0., 359.]
   cd7:
     long_name: current direction 7 m
     resolution: 0.01
@@ -49,9 +48,10 @@ AWAC:
     sampling_frequency: 1
     samples: 600
     units: "degree"
+    valid_range: [0., 359.] # from data
   cv11:
-    uncertainty_rel: 0.01
-    uncertainty_abs: 0.005
+    uncertainty_rel: 0.01 # spec sheet ‘accuracy’
+    uncertainty_abs: 0.005 # spec sheet ‘accuracy’
     long_name: current velocity 11 m
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
@@ -64,9 +64,10 @@ AWAC:
     sampling_frequency: 1
     samples: 600
     units: "m/s"
+    valid_range: [-10., 10.]  # spec sheet ‘velocity range’
   cv7:
-    uncertainty_rel: 0.01
-    uncertainty_abs: 0.005
+    uncertainty_rel: 0.01 # spec sheet ‘accuracy’
+    uncertainty_abs: 0.005 # spec sheet ‘accuracy’
     long_name: current velocity 7 m
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
@@ -79,8 +80,9 @@ AWAC:
     sampling_frequency: 1
     samples: 600
     units: "m/s"
+    valid_range: [-10., 10.]  # spec sheet ‘velocity range’
   vd:
-    uncertainty_abs: 2 # 2–4°
+    uncertainty_abs: 2 # spec sheet ‘accuracy’
     long_name: wave direction
     comment: >-
       From correspondence with the manufacturer, we know that acoustic
@@ -94,8 +96,9 @@ AWAC:
     sampling_frequency: 2
     samples: 1200
     units: "degree"
+    valid_range: [0., 359.] # from data
   vh:
-    uncertainty_rel: 0.01
+    uncertainty_rel: 0.01 # spec sheet ‘accuracy’
     long_name: wave height
     comment: >-
       From correspondence with the manufacturer, it seems very likely that this
@@ -110,6 +113,7 @@ AWAC:
     sampling_frequency: 4
     samples: 2400
     units: "m"
+    valid_range: [-15., 15.]  # spec sheet ‘range’
   vp:
     long_name: wave period
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
@@ -118,6 +122,7 @@ AWAC:
     sampling_frequency: 2
     samples: 1200
     units: "s"
+    valid_range: [0.5, 50.] # spec sheet ‘period range’
   wl:
     long_name: water level
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
@@ -127,38 +132,39 @@ AWAC:
     samples: 2400
     units: "m"
   wt:
-    uncertainty_abs: 0.1
+    uncertainty_abs: 0.1 # spec sheet ‘accuracy’
     long_name: water temperature
     resolution_stats: 0.01 # The recorded Mean & StdDev values have
                            # the same resolution as Max & Min values.
-    valid_range: [ -4.,  40.]
+    valid_range: [ -4.,  40.] # spec sheet ‘range’
     resolution: 0.01
     sampling_frequency: 1
     samples: 600
-    units: "degree Celsius"
+    units: "degree_Celsius"
 CA:
   ws:
-    uncertainty_abs: 0.5
+    uncertainty_abs: 0.5 # spec sheet MW11 ‘inaccuracy’
     long_name: wind speed
-    valid_range: [  0.,  50.]
+    valid_range: [  0.,  50.] # spec sheet ‘operating range’
     sampling_frequency: 4
     samples: 2400
-    "starting_speed": 0.5
+    starting_speed: 0.5 # spec sheet
     units: "m/s"
 HMP:
   at:
-    uncertainty_abs: 0.1 # at 20°C
+    uncertainty_abs: 0.1 # user's guide ‘typical accuracy’ at 20°C
     long_name: ambient temperature
-    valid_range: [-40.,  80.]
+    valid_range: [-40.,  80.] # user's guide measuring range
     temperature_dependence: 0.005 degree Celsius per degree Celsius
-    units: "degree Celsius"
+    units: "degree_Celsius"
   rh:
-    uncertainty_abs: 1 # maximum: 1% (0–90%), 2% (90–100%);
+    uncertainty_abs: 1 # user's guide ‘accuracy’ 
+                       # maximum: 1% (0–90%), 2% (90–100%);
                        # salt solutions: 2% (0–90%), 3% (90–100%);
                        # these are absolute values (percentage points)
                        # not relative values
     long_name: relative humidity
-    valid_range: [   0.,  100.]
+    valid_range: [   0.,  100.] # user's guide measuring range
     units: "%"
 PD:
   pl:
@@ -173,25 +179,26 @@ PD:
       to 'no' and higher values to increasing intensity of precipitation; there
       are a few data points between 0 and 1, but these are likely faulty
       measurements.
-    valid_range: [ 0.,  5.]
     resolution: 7.9e-5 # smallest difference between ordered quantized values
 RPT:
   ap:
-    uncertainty_abs: 0.5 # 0.5 mbar (around 20°C);
+    uncertainty_abs: 0.5 # spec sheet ‘standard accuracy’
+                         # 0.5 mbar (around 20°C);
                          # 1 mbar (between -10°C and 50°C)
     long_name: ambient air pressure
-    valid_range: [600., 1100.]
+    valid_range: [600., 1100.] # spec sheet ‘operating pressure ranges’
     resolution: 0.02
     units: "mbar"
 ST:
   wt:
-    uncertainty_abs: 0.15
-    uncertainty_rel: 0.001
+    uncertainty_abs: 0.15 # spec sheet ‘accuracy’
+    uncertainty_rel: 0.001 # spec sheet ‘accuracy’
     long_name: water temperature
-    units: "degree Celsius"
+    units: "degree_Celsius"
+    valid_range: [-180., 600.] # deduced from spec sheet
 WM:
   hws:
-    uncertainty_rel: 0.015 # %RMS (<20 m/s)'
+    uncertainty_rel: 0.015 # spec sheet ‘accuracy’ %RMS (<20 m/s)'
     long_name: horizontal wind speed
     uncertainty_abs: 0.014 # sqrt(0.01 ** 2 + 0.01 ** 2) = 0.01414213562373095…
                            # ‘resolution’ + ‘offset’
@@ -201,17 +208,17 @@ WM:
     samples: 2400
     units: "m/s"
   vws:
-    uncertainty_rel: 0.015 # %RMS (<20 m/s)'
+    uncertainty_rel: 0.015 # spec sheet ‘accuracy’ %RMS (<20 m/s)'
     long_name: vertical wind speed
     uncertainty_abs: 0.014 # sqrt(0.01 ** 2 + 0.01 ** 2) = 0.01414213562373095…
                            # ‘resolution’ + ‘offset’
-    valid_range: [-60., 60.]
+    valid_range: [-60., 60.] # spec sheet range
     resolution: 0.01
     sampling_frequency: 4
     samples: 2400
     units: "m/s"
   wd:
-    uncertainty_abs: 2 # <25 m/s
+    uncertainty_abs: 2 # spec sheet ‘accuracy’ <25 m/s
     long_name: wind direction
     comment: >-
       The majority of missing (Max, Min)-value pairs with non-missing Mean
@@ -220,7 +227,7 @@ WM:
       (Possibly, such value pairs were removed to mistakenly avoid Min-values
       smaller than Max-values, although that makes perfect sense for
       directional data.)
-    valid_range: [0., 360.]
+    valid_range: [0., 360.] # spec sheet range
     resolution: 1
     sampling_frequency: 4
     samples: 2400
@@ -228,7 +235,7 @@ WM:
 WV:
   wd:
     uncertainty_abs: 1.4 # sqrt((360 / 256) ** 2 + 0.3 ** 2) = 1.4378939677528…
-                         # ‘resolution’ + ‘code disc error’
+                         # ‘resolution’ + ‘code disc error’ (from spec sheet)
     long_name: wind direction
     comment: >-
       The majority of missing (Max, Min)-value pairs with non-missing Mean

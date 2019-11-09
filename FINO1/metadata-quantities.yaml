@@ -5,9 +5,10 @@ CA:
     long_name: wind speed
     standard_name: wind_speed
     units: "m/s"
-    valid_range: [0.1, 75.]
-    uncertainty_abs: 0.1
-    uncertainty_rel: 0.01
+    valid_range: [0.1, 75.] # online spec sheet
+                            # ‘maximum windspeed’ and ‘stopping speed’ 
+    uncertainty_abs: 0.1 # FINO1 metadata tables
+    uncertainty_rel: 0.01 # online spec sheet ‘accuracy’ 
     sampling_frequency: 1.
 HTT:
   Lf:
@@ -16,8 +17,8 @@ HTT:
     long_name: relative humidity
     standard_name: relative_humidity
     units: "%"
-    valid_range: [10., 100.]
-    uncertainty_abs: 3.
+    valid_range: [10., 100.] # spec sheet ‘measuring range’
+    uncertainty_abs: 3. # spec sheet ‘accuracy’
     sampling_frequency: 1.
   Lt:
     bsh_name: Lufttemperatur
@@ -25,14 +26,14 @@ HTT:
     long_name: air temperature
     standard_name: air_temperature
     units: "degree Celsius"
-    uncertainty_abs: 0.1
+    uncertainty_abs: 0.1 # FINO1 metadata tables
     sampling_frequency: 1.
 PM:
   Ns:
     bsh_name: Niederschlag
     statistics: [val]
     long_name: precipitation presence
-    flag_values: [0, 1]
+    flag_values: [0, 1] # FINO1 metadata tables
     flag_meanings: "no yes"
 PS:
   Ni:
@@ -41,7 +42,7 @@ PS:
     long_name: intensity of precipitation
     standard_name: lwe_precipitation_rate
     units: "mA"  # stands for mm/min via formula in manual
-    valid_range: [4., 20.]  # [0,10] mm/min
+    valid_range: [4., 20.]  # manual ‘electrical output’ [0,10] mm/min
     sampling_frequency: 1.
 PTB:
   Ld:
@@ -50,8 +51,8 @@ PTB:
     long_name: air pressure
     standard_name: air_pressure
     units: "hPa"
-    valid_range: [800., 1060.]
-    uncertainty_abs: 0.3
+    valid_range: [800., 1060.] # spec sheet ‘pressure range’
+    uncertainty_abs: 0.3 # spec sheet ‘accuracy at room temperature’
     sampling_frequency: 1.
 PYR:
   Gs:
@@ -59,8 +60,8 @@ PYR:
     statistics: [avg]
     long_name: global radiation
     units: "W/m2"
-    valid_range: [0., 4000.]
-    uncertainty_rel: 0.03  # from metadata sheets; not in specsheet
+    valid_range: [0., 4000.] # manual ‘maximum operational irradiance’
+    uncertainty_rel: 0.03  # from FINO1 metadata sheets; not in manual
     sampling_frequency: 1.
 UA:
   Wg:
@@ -69,9 +70,9 @@ UA:
     long_name: wind speed
     standard_name: wind_speed
     units: "m/s"
-    valid_range: [0., 45.]
-    uncertainty_abs: 0.01
-    uncertainty_rel: 0.01
+    valid_range: [0., 45.] # spec sheet ‘range’
+    uncertainty_abs: 0.01 # spec sheet ‘resolution’
+    uncertainty_rel: 0.01 # spec sheet ‘accuracy’ %RMS
     sampling_frequency: 50.
   Wr:
     bsh_name: Windrichtung
@@ -79,8 +80,8 @@ UA:
     long_name: wind direction
     standard_name: wind_from_direction
     units: "degree"
-    valid_range: [0, 359]
-    uncertainty_abs: 1.
+    valid_range: [0, 359] # spec sheet ‘range’
+    uncertainty_abs: 1. # spec sheet ‘accuracy’ °RMS
     sampling_frequency: 50.
 WV:
   Wr:
@@ -89,6 +90,6 @@ WV:
     long_name: wind direction
     standard_name: wind_from_direction
     units: "degree"
-    valid_range: [0, 360]
-    uncertainty_abs: 2.
+    valid_range: [0, 360] # spec sheet ‘measuring range’
+    uncertainty_abs: 2. # spec sheet ‘accuracy’
     sampling_frequency: 1.

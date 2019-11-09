@@ -4,7 +4,8 @@ HMP:
     standard_name: relative_humidity
     units: "%"
     quality: Q1
-    valid_range: [0., 100.] # there are some values > 100
+    valid_range: [0., 100.] # spec sheet ‘measurement range’;
+                            # there are some values > 100
     uncertainty_abs: 1.
       # derived from spec sheet information about accuracy:
       #   between 15°C and 25°C:
@@ -20,7 +21,7 @@ HMP:
     standard_name: air_temperature
     units: "degree_Celsius"
     quality: Q1
-    valid_range: [-80.0, 60.0]
+    valid_range: [-80.0, 60.0] # spec sheet ‘measurement range’
     uncertainty_abs: 0.12
       # derived from spec sheet information about accuracy:
       #   0.176 - 0.0028·reading between -80°C and 20°C
@@ -31,8 +32,8 @@ PTB:
     standard_name: air_pressure
     units: "hPa"
     quality: Q1
-    valid_range: [500.0, 1100.0]
-    uncertainty_abs: 0.1
+    valid_range: [500.0, 1100.0] # from spec sheet ‘pressure range’
+    uncertainty_abs: 0.1 # spec sheet ‘total accuracy’ (class B, 20°C, 1σ)
 pseudo:
   AirDensity: # air_density(Pair, Tair) = Pair * 100 / 287.05 / (Tair + 273.15)
     long_name: calculated air density
@@ -48,9 +49,9 @@ CA:
     standard_name: wind_speed
     units: "m/s"
     quality: Q1
-    valid_range: [0.3, 75.]
-    uncertainty_abs: 0.2
-    uncertainty_rel: 0.01 
+    valid_range: [0.3, 75.] # spec sheet ‘measuring range’
+    uncertainty_abs: 0.2 # spec sheet ‘accuracy’
+    uncertainty_rel: 0.01  # spec sheet ‘accuracy’
   TrueWs:
     long_name: tower shadow-corrected wind speed
     standard_name: wind_speed
@@ -64,7 +65,7 @@ WV:
     standard_name: wind_from_direction
     units: "degree"
     quality: Q1
-    uncertainty_abs: 1.
+    uncertainty_abs: 1. # spec sheet ‘measuring accuracy’
     comment: >-
        The avg values lie in [0,360], but the min and max values may lie
        outside this interval, to make sure that min < avg < max.
@@ -81,32 +82,32 @@ USA:
   SSon:
     long_name: sonic status
     quality: Q1
-    flag_values: [-1000., 0.]
+    flag_values: [-1000., 0.] # from data
     flag_meanings: Not_OK OK
   WsXSon:
     long_name: wind speed X
     standard_name: x_wind
     units: "m/s"
     quality: Q1
-    valid_range: [-60.,  60.]
-    uncertainty_abs: 0.1
-    uncertainty_rel: 0.02
+    valid_range: [-60.,  60.] # spec sheet ‘measurement ranges’
+    uncertainty_abs: 0.1 # spec sheet ‘accuracy’
+    uncertainty_rel: 0.02 # spec sheet ‘accuracy’
   WsYSon:
     long_name: wind speed Y
     standard_name: y_wind
     units: "m/s"
     quality: Q1
-    valid_range: [-60.,  60.]
-    uncertainty_abs: 0.1
-    uncertainty_rel: 0.02
+    valid_range: [-60.,  60.] # spec sheet ‘measurement ranges’
+    uncertainty_abs: 0.1 # spec sheet ‘accuracy’
+    uncertainty_rel: 0.02 # spec sheet ‘accuracy’
   WsZSon:
     long_name: wind speed Z
     standard_name: upward_air_velocity
     units: "m/s"
     quality: Q1
-    valid_range: [-60.,  60.]
-    uncertainty_abs: 0.1
-    uncertainty_rel: 0.02
+    valid_range: [-60.,  60.] # spec sheet ‘measurement ranges’
+    uncertainty_abs: 0.1 # spec sheet ‘accuracy’
+    uncertainty_rel: 0.02 # spec sheet ‘accuracy’
   WsMag:
     long_name: calculated wind speed magnitude
     units: "m/s"
@@ -133,20 +134,20 @@ PD:
   Prec:
     long_name: precipitation presence
     quality: Q1
-    flag_values: [0., 100.]
+    flag_values: [0., 100.] # from data
     flag_meanings: no yes
 PM:
   qual:
     long_name: momentaneous measurement quality
     units: "%"
     quality: Q5
-    valid_range: [0., 100.]
+    valid_range: [0., 100.] # from instrumentation report
     comment: original statistic's resolution is 1 pp
   Synop:
     long_name: >-
       synoptic code (ww 4677), specifies the kind of precipitation, if any
     quality: Q5
-    flag_values: [
+    flag_values: [ # from instrumentation report
       51, 52, 53, # Drizzle (also freezing)
       58, 59,     # Drizzle with rain
       61, 63, 65, # Rain (also freezing)
@@ -161,29 +162,29 @@ PM:
     standard_name: lwe_precipitation_rate
     units: "mm/min"
     quality: Q5
-    uncertainty_rel: 0.15
-    valid_range: [.005, 250.]
+    uncertainty_rel: 0.15 # spec sheet ‘accuracy with quantity meas.’
+    valid_range: [.005, 250.] # spec sheet ‘intensity’
   Prec:
     long_name: precipitation presence
     quality: Q5
-    flag_values: [0., 100.]
+    flag_values: [0., 100.] # from instrumentation report
     flag_meanings: no yes
   amount:
     long_name: amount of precipitation since the last sensor reset
     units: "mm"
     quality: Q5
-    valid_min: 0.
+    valid_min: 0. # from physics
     comment: original statistic's resolution is 1 mm
   visib:
     long_name: visibility distance
     standard_name: visibility_in_air
     units: "m"
     quality: Q5
-    valid_range: [0., 100000.]
+    valid_range: [0., 100000.] # from instrumentation report
     comment: original statistic's resolution is 10 m
   OK:
     long_name: sensor status
     units: "%"
     quality: Q1
-    flag_values: [0., 100.]
+    flag_values: [0., 100.] # from instrumentation report
     flag_meanings: OK not_OK
