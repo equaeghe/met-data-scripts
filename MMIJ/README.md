@@ -7,3 +7,4 @@ File descriptions:
 * `structure.yaml`: structure file used by the transformation scripts
 * `automated-check-snippets.py`: script for (semi-)automated quality checks, such as outlier detection
 * `discrete_values_check-example.py`: script showing an example of a live session to check discrete values
+* `get_uncertainty+bias.py`: script calculating average relative statistic uncertainties and average relative bias in the sample standard deviation
