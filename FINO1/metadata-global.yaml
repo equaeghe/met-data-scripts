@@ -59,3 +59,8 @@ publisher: Erik Quaeghebeur
 publisher_email: E.R.G.Quaeghebeur@tudelft.nl
 publisher_type: person
 publisher_institution: Delft University of Technology
+EERA_JPWind: |-
+    Activities:Measurements:Field Experiment
+    External Conditions:Location:Offshore:Offshore
+    External Conditions:Water Depth Category:Shallow Water
+    Data Categories:Meteorological
