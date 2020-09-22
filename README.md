@@ -13,4 +13,7 @@ Within each directory are a number of scripts:
 * possibly one helper script
 
 More information is given as comments in the script files and in a `README.md` file in each directory.
-_(Once available a reference will be added here to a publication describing the research in the context of which these scripts were created.)_
+
+Corresponding publication:
+
+_Erik Quaeghebeur and Michiel B. Zaaijer (28 Feb 2020) “How to improve the state of the art in metocean measurement datasets”. Wind Energy Science, 5, 285–308. [doi:10.5194/wes-5-285-2020](https://doi.org/10.5194/wes-5-285-2020)_
